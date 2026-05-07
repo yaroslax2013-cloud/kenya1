@@ -109,9 +109,9 @@ body{
     text-align:center;
     width:100%;
     opacity:0.8;
-    animation: fadeIn 0.6s ease;
 
-    align-self:center;
+    display:flex;
+    justify-content:center;
 }
 
 </style>
@@ -216,7 +216,12 @@ async function start(){
         scroll();
     }, 600);
 
-    add('<div class="notice">limited spots • only for active users</div>');
+    const notice = document.createElement("div");
+notice.className = "notice";
+notice.innerText = "limited spots • only for active users";
+
+messages.appendChild(notice);
+scroll();
 }
 
 window.onload = () => {
